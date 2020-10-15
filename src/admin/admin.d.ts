@@ -1,3 +1,0 @@
-interface AdminState {
-    sidebar : boolean
-}

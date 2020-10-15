@@ -10,4 +10,3 @@ export async function callApi(method: string, url: string, path: string, data?: 
     })
     return res.json()
   }
-  

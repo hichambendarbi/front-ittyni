@@ -12,14 +12,9 @@ import { connect } from 'react-redux';
 import { IttyniState } from '../store/index';
 import Helmet from 'react-helmet';
 
-interface IHomeProps extends 
-/** laboState */
-LabLaboState,
-/** LabTest State */
-LabTestState 
-{}
+interface IHomeProps {}
 
-export const Home: React.FunctionComponent<IHomeProps> = ({listAll, labTestFrDetails, laboDetails}) => {
+export const Home: React.FunctionComponent<IHomeProps> = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -52,27 +47,7 @@ export const Home: React.FunctionComponent<IHomeProps> = ({listAll, labTestFrDet
 
           <Wrapper.MainContent>
 
-            {/** login page */}
-            <Route path={routes.auth.path} component={routes.auth.component} exact/>
-
-            {/** lab procedure list page */}
-            <Route path={routes.lab.LabTests.labTests.path} component={routes.lab.LabTests.labTests.component} />
-
-            {/** lab procedure details */}
-            <Route path={routes.lab.LabTests.labTestDetail.path} 
-                  component={()=><routes.lab.LabTests.labTestDetail.component labTestFrDetails={labTestFrDetails}/>} exact/>
-
-            {/** lab labos page */}
-            <Route path={routes.lab.Labo.Labos.path} component={()=><routes.lab.Labo.Labos.component labos={listAll} />} exact/>
-
-            {/** Lab labos details */}
-            <Route path={routes.lab.Labo.LaboDetails.path} 
-                  component={()=><routes.lab.Labo.LaboDetails.component laboDetails={laboDetails} />} />
-            {/* any rout in website */}
-            <Route path="/website/" render={({history})=>{
-              history.push(`/analyses-medicales/Listes-prix-analyses-medicales/maroc`)
-              return(<></>)
-            } } exact/>
+             Here Goes Extension modules
 
           </Wrapper.MainContent>
           <Wrapper.MainSide>
@@ -88,13 +63,6 @@ export const Home: React.FunctionComponent<IHomeProps> = ({listAll, labTestFrDet
     </>
   );
 };
-
-const mapStateToProps = ({labState : { labo, test }} : IttyniState) =>({
-  listAll : labo? labo.listAll : undefined,
-  labTestFrDetails : test? test.labTestFrDetails : undefined,
-  laboDetails : labo? labo.laboDetails : undefined
-})
-export default connect(mapStateToProps)(Home);
 
 const LoginIcon = styled((props: { className?: string }) => (
   <svg

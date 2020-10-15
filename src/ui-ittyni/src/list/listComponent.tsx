@@ -1,11 +1,6 @@
 import * as React from 'react';
 import * as List from './list'
-import { Ico } from '../../../react-icons-sc/src/ico';
-import { tube } from '../../../lab-ittyni/src/icon/sample';
 import { Badge } from '../badge/badge';
-import { Link } from 'react-router-dom';
-import styled from '../../../theme/styled-components';
-import { TestLink } from '../links/Links';
 
 
 interface IListComponentProps {
@@ -33,8 +28,8 @@ const ListComponent: React.FC<IListComponentProps> = ({ listTitle, data }) => {
                             {/* content of item header description */}
                             <List.ItemContent>
 
-                                <List.ItemContentTitle><TestLink to={`/website/analyses-medicales/${item.title}`}>
-                                    <h2>{item.title}</h2></TestLink>
+                                <List.ItemContentTitle>
+                                    <h2>{item.title}</h2>
                                 </List.ItemContentTitle>
 
                                 <List.ItemContentDescription>

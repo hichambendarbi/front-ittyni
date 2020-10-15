@@ -13,7 +13,8 @@ import { theme } from "./theme";
 
 import HomeLayout from './website/index'
 import { routes } from './routes';
-import Admin from './admin/Layout'
+import { Home } from "./website/home";
+
 
 
 interface MainProps {
@@ -29,8 +30,7 @@ const Main: React.FC<MainProps> = ({ store, history }) => {
                 <Provider store={store}>
                     <Router history={history}>
                         <Switch>
-                            <Route path={routes.admin.path} component={Admin} />
-                            <Route path={routes.website.path} component={HomeLayout} />
+                            <Route path={routes.website.path} component={Home} />
                             <Redirect from='/*' to={routes.website.path} />
                         </Switch>
                     </Router>

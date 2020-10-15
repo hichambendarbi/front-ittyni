@@ -1,7 +1,7 @@
 {
-  "name": "new",
-  "version": "1.0.0",
-  "description": "",
+  "name": "front-ittyni",
+  "version": "1.0.2",
+  "description": "version 1.0.2 beta",
   "keywords": [],
   "main": "src/index.tsx",
   "types": "src/react-app-env.d.ts",
